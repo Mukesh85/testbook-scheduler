@@ -4,7 +4,8 @@
   "description": "A scheduler application for demonstrating skills",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js"
+    "test": "nodemon app.js",
+    "start":"node app.js"
   },
   "keywords": [
     "schedule",
