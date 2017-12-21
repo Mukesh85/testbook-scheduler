@@ -1,0 +1,8 @@
+<div class="row">
+        <div class="input-field col s12">
+		<i ng-if="control.label == 'name'" class="material-icons prefix">account_circle</i>
+		<i ng-if="control.label != 'name'" class="material-icons prefix">info</i>
+		<input id = "{{control.label}}" type = "text" ng-model="control.value" ng-blur="blur()" ng-change = "blur()" ng-class="{'invalid':invalid, 'valid':valid}"/>
+		<label for="{{control.label}}" data-error="wrong" data-success="right">{{control.label}}</label>
+</div>
+</div>

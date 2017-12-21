@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app = "schedulerApp">
+<head>
+	<title>Sample angular scheduler</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="custom.css">
+	
+</head>
+<body>
+
+
+  <div ng-controller = "controller2 as viewController">
+  <div class="row" ng-repeat = "schedule in viewController.schedules">
+        <div class="col s12 m8 push-m2">
+          <div class="card darken-1">
+            <div class="card-content">
+             <span>
+              <i class="material-icons prefix">account_circle</i> {{schedule.name}} 
+             </span>
+             <span>
+              <i class="material-icons prefix">phone</i> {{schedule.contact}} 
+             </span>
+             <span>
+              <i class="material-icons prefix">info</i> {{schedule.text}} 
+             </span>
+             <span>
+              <i class="material-icons prefix">alarm_on</i> {{schedule.time}} 
+             </span>
+             
+        </div>
+        </div>
+        </div>
+      </div>
+</div>
+<div ng-controller = "controller1 as formController">
+	<div class="row" ng-show="formController.showForm">
+        <div class="col s12 m8 push-m2">
+          <div class="card darken-1">
+            <div class="card-content">
+              <text-component control="formController.textControl1" >
+              </text-component>
+
+              <phone-component control="formController.phoneControl"></phone-component>
+
+              <text-component control="formController.textControl2" >
+              </text-component>
+
+              <time-component control="formController.timeControl" >
+              </time-component>
+              
+              
+            </div>
+            <div class="card-action center">
+              <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="formController.addToSchedules()" form-continue>Add
+                 <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="row" ng-show="!formController.showForm">
+    <div class="col s12 m12 center margin-top-40">
+    <a class="btn-floating btn-large waves-effect waves-light red" ng-click="formController.toggleForm()"><i class="material-icons">add</i></a>
+    </div>
+    </div>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script type="text/javascript" src = "app.js"></script>
+</body>
+</html>

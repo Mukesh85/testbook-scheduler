@@ -1,0 +1,20 @@
+{
+  "name": "testbook-assignment",
+  "version": "1.0.0",
+  "description": "A scheduler application for demonstrating skills",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "keywords": [
+    "schedule",
+    "scheduler",
+    "testbook"
+  ],
+  "author": "Mukesh P",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.14.0"
+  }
+}
